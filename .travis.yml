@@ -1,0 +1,14 @@
+sudo: required
+services:
+  - docker
+
+script:
+  - echo "Build local image"
+  - docker build -t python .
+  - docker images
+  - docker run -it python
+  - docker ps -a
+  - echo "Testing public image on Docker Hub"
+  - docker run -it nguoianphu/docker-python
+  - docker ps -a
+  - docker images
