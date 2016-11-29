@@ -6,9 +6,9 @@ script:
   - echo "Build local image"
   - docker build -t python .
   - docker images
-  - docker run -it python
+  - docker run -it python -c "import sys; print(sys.version)"
   - docker ps -a
   - echo "Testing public image on Docker Hub"
-  - docker run -it nguoianphu/docker-python
+  - docker run -it nguoianphu/docker-python -c "import sys; print(sys.version)"
   - docker ps -a
   - docker images
