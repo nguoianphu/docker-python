@@ -5,4 +5,6 @@ FROM python:2-alpine
 MAINTAINER Tuan Vo <vohungtuan@gmail.com>
 
 RUN set -x \
-    pip install pymongo 
+    && apk add --update bash \
+    && rm -rf /var/cache/apk/* \
+    && pip install pymongo 
